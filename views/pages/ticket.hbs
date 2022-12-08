@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <!-- bts css -->>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- stylesheet -->
+
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&family=Ubuntu:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/b71d1092b8.js" crossorigin="anonymous"></script>
+    <style>
+    #ticket-background{
+    background-color: #E5B8F4;
+    line-height: 15px;
+}
+
+.ticket-container{
+    position: absolute;
+    margin: 2% 0 0 20%;
+    width: 60%;
+    background-color: #F1D3B3;
+    padding: 2%;
+}
+.ticket-bottom, .ticket-top{
+    margin: 2% 0 2% 0;
+    background-color: #FEFCF3;
+    border: solid 1px #282A3A;
+    border-radius: 25px;
+    padding: 2%;
+}
+    </style>
+</head>
+
+<body id="ticket-background">
+    <section>
+      {{#each list}}
+        <div class="ticket-container row">
+            <div class="ticket-top">
+                <h1>Booking confirmation</h1>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p name="id">ticket number: {{_id}} </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p name="date">Booked on: {{date}} </p>
+                    </div>
+                </div>
+                <h2><i class="fa-solid fa-plane-departure"></i>Flight Details</h2>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p name="time">Departing time: {{Time}}</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p anme="traveltime">Travel Time: {{traveltime}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h5>SPR Airways</h5>
+                            <p>Flight Number</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p name="date">Departure Date: {{date}}</p>
+                            <p name="source">Journey From: {{source}}</p>
+                            <p name="destination">Journey To: {{destination}}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="ticket-bottom">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Traveler Information</h4>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>SPR Airways is waiting for your arrival..</h4>
+                        <p>Read instructions carefully!!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h5>E-Ticket Number</h5>
+                        <p name="id">{{_id}}</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5>Traveler Name</h5>
+                        <p name="name">{{name}}</p>
+                    </div>
+                </div>
+                <a href="/cancle/{{_id}}" role="button" type="submit" class="btn btn-outline-warning btn-lg" onclick="return confirm('Continue?')">Cancel Ticket</a>
+
+            </div>
+        </div>
+      {{/each}}
+
+    </section>
+
+
+
+</body>
+
+</html>

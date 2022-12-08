@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  <!-- bts css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <!-- stylesheet -->
+
+
+  <!-- bts js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- font-awesome -->
+  <script src="https://kit.fontawesome.com/b71d1092b8.js" crossorigin="anonymous"></script>
+<style>
+
+.home-page{
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+h1{
+  font-weight: bold;
+}
+.big-heading{
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+#title{
+  background-color: #DEDDFA;
+  color: #F70776;
+  text-align: left;
+}
+
+.container-fluid{
+  padding: 3% 15% 7%;
+}
+
+.navbar{
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+.title-image{
+  width: 50%;
+  position: absolute;
+  right: 23%;
+}
+
+@media (max-width: 1028px) {
+  .title-image{
+    position: static;
+    width: 60%;
+    transform: rotate(0);
+  }
+  #title{
+    text-align: center;
+  }
+}
+
+/********** check_availability ********/
+
+#check_availability{
+	border: 0;
+	box-sizing: border-box;
+	padding: 0;
+  background-color: #DEDDFA;
+}
+:root {
+	--fg: #17181c;
+	--.search: #ffffff;
+	--primary: #255ff4;
+	--dur: 1s;
+}
+
+#check_availability {
+	display: flex;
+  position: relative;
+	width: 100%;
+	max-width: 16em;
+  margin-top: 20% !important;
+  margin-bottom: 20% !important;
+}
+#check_availability, .search, .caret {
+	margin: auto;
+}
+
+.search, .caret {
+	display: block;
+	transition: all calc(var(--dur) * 0.5) linear;
+}
+.search {
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.25em inset;
+	caret-color: var(--primary);
+	width: 2em;
+	height: 2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.search:focus, .search:valid {
+	background: var(--.search);
+	border-radius: 0.25em;
+	box-shadow: none;
+	padding: 0.75em 1em;
+	transition-duration: calc(var(--dur) * 0.25);
+	transition-delay: calc(var(--dur) * 0.25);
+	width: 100%;
+	height: 3em;
+}
+.search:focus {
+	animation: showCaret var(--dur) steps(1);
+	outline: transparent;
+}
+.search:focus + .caret, .search:valid + .caret {
+	animation: handleToCaret var(--dur) linear;
+	background: transparent;
+	width: 1px;
+	height: 1.5em;
+	transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+}
+.search::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.search_label {
+	color: #e3e4e8;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+.caret {
+	background: currentColor;
+	border-radius: 0 0 0.125em 0.125em;
+	margin-bottom: -0.6em;
+	width: 0.25em;
+	height: 1em;
+	transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+	transform-origin: 50% 0;
+}
+
+/* Animations */
+@keyframes showCaret {
+	from {
+		caret-color: transparent;
+	}
+	to {
+		caret-color: var(--primary);
+	}
+}
+@keyframes handleToCaret {
+	from {
+		background: currentColor;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+	}
+	25% {
+		background: currentColor;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
+	}
+	50%, 62.5% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
+	}
+	75%, 99% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+	}
+	87.5% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
+	}
+	to {
+		background: transparent;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+	}
+}
+
+</style>
+</head>
+
+<body class="home-page">
+  <section id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg ">
+
+        <a class="navbar-brand" href="#">SPR Airlines</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#check_availability">Check availability</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#go-to-ticket">Ticket</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Welcome to SPR Airlines!!</h1>
+        </div>
+        <div class="col-lg-6">
+          <img class="title-image" src="blueAirplane.png" alt="airplane-img">
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <!-- check_availability -->
+  <section id="check_availability">
+    <form action="search" method="POST">
+      <div>
+      <label for="search" class="search_label">Search</label>
+      <input id="search" class="search" name="source" type="search" pattern=".*\S.*" required>
+      <span class="caret"></span>
+    </div>
+    <div>
+      <label for="search" class="search_label">Search</label>
+      <input id="search" class="search" name="destination" type="search" pattern=".*\S.*" required>
+      <span class="caret"></span>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </section>
+
+
+
+  <div class="container" id="go-to-ticket">
+  <section class="ticket">
+    <form action="ticketshow" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address:</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  </section>
+  <br /><br />
+  {{#if ticket}}
+  <section class="">
+
+    <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each listticket}}
+      <tr>
+        <td><a href="/ticket/{{id}}">{{date}}</a></td>
+
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  </section>
+  {{/if}}
+</div>
+<br /><br />
+</body>
+
+</html>

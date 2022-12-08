@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SPR Airlines</title>
+
+      <!--styles.css link-->
+      <link rel="stylesheet" href="css/styles.css">
+
+      <!--google fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&display=swap" rel="stylesheet">
+
+      <!--bootstrap css-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <style>
+      .login-page{
+        margin: auto;
+        width: 33%;
+        background-color: #DEDDFA;
+        padding: 2% 5% 2% 5%;
+        font-family: Montserrat;
+        color: #323232;
+        position: absolute;
+        margin: 5% 0 0 7%;
+        border-radius: 25px;
+      }
+
+      .opening{
+        text-align: center;
+        color: #F70776;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      #exampleInputEmail1, #exampleInputPassword1 {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      #emailHelp, .signup{
+        font-weight: 300;
+      }
+      #login-button{
+        width: 100%;
+        margin: auto;
+        background-color: #F70776;
+        color: white;
+      }
+
+      .btn:hover {
+        opacity: 0.8;
+      }
+      .cover-image{
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      .form-text{
+        margin-top: 0;
+      }
+
+
+      /**********home.html************/
+
+      .home-page{
+        font-family: "Montserrat";
+        text-align: center;
+      }
+      h1{
+        font-weight: bold;
+      }
+      .big-heading{
+        font-family: "Montserrat";
+        font-weight: 900;
+        font-size: 3.5rem;
+        line-height: 1.5;
+      }
+
+      #title{
+        background-color: #DEDDFA;
+        color: #F70776;
+        text-align: left;
+      }
+
+      .container-fluid{
+        padding: 3% 15% 7%;
+      }
+
+      .navbar{
+        padding: 0 0 4.5rem;
+      }
+
+      .navbar-brand {
+        font-family: "Ubuntu";
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      .nav-item{
+        padding: 0 18px;
+      }
+
+      .nav-link{
+        font-size: 1.2rem;
+        font-family: "Montserrat";
+        font-weight: 300;
+      }
+
+      .title-image{
+        width: 20%;
+        position: absolute;
+        right: 23%;
+      }
+
+      @media (max-width: 1028px) {
+        .title-image{
+          position: static;
+          width: 60%;
+          transform: rotate(0);
+        }
+        #title{
+          text-align: center;
+        }
+      }
+
+      /********** check_availability ********/
+
+      #check_availability{
+      	border: 0;
+      	box-sizing: border-box;
+      	padding: 0;
+        background-color: #DEDDFA;
+      }
+      :root {
+      	--fg: #17181c;
+      	--.search: #ffffff;
+      	--primary: #255ff4;
+      	--dur: 1s;
+      }
+
+      #check_availability {
+      	display: flex;
+        position: relative;
+      	width: 100%;
+      	max-width: 16em;
+        margin-top: 20% !important;
+        margin-bottom: 20% !important;
+      }
+      #check_availability, .search, .caret {
+      	margin: auto;
+      }
+
+      .search, .caret {
+      	display: block;
+      	transition: all calc(var(--dur) * 0.5) linear;
+      }
+      .search {
+      	background: transparent;
+      	border-radius: 50%;
+      	box-shadow: 0 0 0 0.25em inset;
+      	caret-color: var(--primary);
+      	width: 2em;
+      	height: 2em;
+      	-webkit-appearance: none;
+      	-moz-appearance: none;
+      	appearance: none;
+      }
+      .search:focus, .search:valid {
+      	background: var(--.search);
+      	border-radius: 0.25em;
+      	box-shadow: none;
+      	padding: 0.75em 1em;
+      	transition-duration: calc(var(--dur) * 0.25);
+      	transition-delay: calc(var(--dur) * 0.25);
+      	width: 100%;
+      	height: 3em;
+      }
+      .search:focus {
+      	animation: showCaret var(--dur) steps(1);
+      	outline: transparent;
+      }
+      .search:focus + .caret, .search:valid + .caret {
+      	animation: handleToCaret var(--dur) linear;
+      	background: transparent;
+      	width: 1px;
+      	height: 1.5em;
+      	transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+      }
+      .search::-webkit-search-decoration {
+      	-webkit-appearance: none;
+      }
+      .search_label {
+      	color: #e3e4e8;
+      	overflow: hidden;
+      	position: absolute;
+      	width: 0;
+      	height: 0;
+      }
+      .caret {
+      	background: currentColor;
+      	border-radius: 0 0 0.125em 0.125em;
+      	margin-bottom: -0.6em;
+      	width: 0.25em;
+      	height: 1em;
+      	transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+      	transform-origin: 50% 0;
+      }
+
+
+      /* Animations */
+      @keyframes showCaret {
+      	from {
+      		caret-color: transparent;
+      	}
+      	to {
+      		caret-color: var(--primary);
+      	}
+      }
+      @keyframes handleToCaret {
+      	from {
+      		background: currentColor;
+      		width: 0.25em;
+      		height: 1em;
+      		transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+      	}
+      	25% {
+      		background: currentColor;
+      		width: 0.25em;
+      		height: 1em;
+      		transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
+      	}
+      	50%, 62.5% {
+      		background: var(--primary);
+      		width: 1px;
+      		height: 1.5em;
+      		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
+      	}
+      	75%, 99% {
+      		background: var(--primary);
+      		width: 1px;
+      		height: 1.5em;
+      		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+      	}
+      	87.5% {
+      		background: var(--primary);
+      		width: 1px;
+      		height: 1.5em;
+      		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
+      	}
+      	to {
+      		background: transparent;
+      		width: 1px;
+      		height: 1.5em;
+      		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+      	}
+      }
+
+      /********** booking.html ********/
+      .booking-page{
+        background-color: #DEDDFA;
+      }
+      .booking-form{
+        margin: auto;
+        width: 80%;
+        padding: 5% 5%;
+        font-family: Montserrat;
+        color: #323232;
+        background-color: #ffff;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border: #323232 solid 1px;
+        border-radius: 25px;
+      }
+      .paging{
+        margin: 4% 0;
+      }
+      .hr-line{
+        border-style: dotted;
+        border-width: 4px;
+        border-color: #323232;
+        border-bottom-style: none;
+        width: 90%;
+        margin: auto;
+      }
+      .fname, .phone, .booking-email{
+        width: 60%;
+        padding: 10px 12px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+      }
+      #btn-card, #btn-upi{
+        background-color: #F70776;
+      }
+
+      </style>
+  </head>
+  <body>
+    <img class="cover-image" src="airplane.png" alt="cover-image">
+    <form action="userlogin" method="POST" class="login-page" >
+      <div class="opening">
+        <p>Welcome to SPR Airlines..!</p>
+      </div>
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <button type="submit" id="login-button" class="btn">Login</button>
+      <!-- <button type="submit" ><a  role="button"type="submit" id="login-button" class="btn">Login</a></button> -->
+      <div class="mb-3 signup">
+        <p>or <a href="#">Create an account</a></p>
+      </div>
+      <div class="error">
+        {{#if mesg}}
+        <h3>Email Invalid</h3>
+        {{/if}}
+      </div>
+    </form>
+
+</div>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+
+</html>
